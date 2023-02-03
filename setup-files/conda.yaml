@@ -1,0 +1,13 @@
+name: model-env
+channels:
+  - conda-forge
+dependencies:
+  - python=3.8
+  - pip=23.0
+  - pandas>=1.1,<1.2
+  - python-dotenv==0.21.0
+  - scikit-learn==1.2.1
+  - pip:
+    - mltable==1.1.0
+    - azure-ai-ml==1.2.0
+    - azure-ai-textanalytics==5.2.1

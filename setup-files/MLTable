@@ -1,0 +1,8 @@
+paths:
+- folder: azureml://datastores/customer_reviews_adls1/paths/customer-reviews/
+transformations:
+- read_delta_lake:
+    include_path_column: false
+    timestamp_as_of: '2023-01-15T00:00:00Z'
+    version_as_of: null
+type: mltable
