@@ -10,6 +10,7 @@ Azure Synapse. The major steps include:
 
 Through the various stages above, various folders are created to track the stages. A quick visual on this is
 shown below:
+
 ![folders](./imgs/folders.jpg)
 
 ## Other Details
