@@ -15,7 +15,7 @@ shown below:
 
 ## Other Details
 - This repo is intended just to surface functionality and is not "hardened" with good security and identity
-  access practices.
+  access practices. For detailed steps, refer the `Makefile`.
 - To illustrate Azure ML pipelines and Cognitive services, a text analytics resource was created to make API
   calls to categorize customer sentiment. However, with continuing integrations in Azure Synapse, an easier
   way is highlighted
