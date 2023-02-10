@@ -22,7 +22,7 @@ def main():
     total_reviews = read_inputs(source='./setup-files/reviews.txt')
     random.shuffle(total_reviews)
 
-    for i in range(100):
+    for i in range(10):
 
         # Schema: name, address, IP address, review
         name, address, ip_address, review = [], [], [], []

@@ -1,23 +1,23 @@
 install:
 	#conda create -n synapseops python=3.8 -y; conda activate synapseops
-	pip install python-dotenv
-	pip install Faker
-	pip install pandas
-	pip install azure-storage-file-datalake
-	pip install scikit-learn
-	pip install azure-ai-ml
-	pip install azure-identity
-	pip install azure-ai-textanalytics
-	pip install mltable
-	pip install flake8
+	pip install -r requirements.txt
+	# pip install python-dotenv
+	# pip install Faker
+	# pip install pandas
+	# pip install azure-storage-file-datalake
+	# pip install scikit-learn
+	# pip install azure-ai-ml
+	# pip install azure-identity
+	# pip install azure-ai-textanalytics
+	# pip install mltable
+	# pip install flake8
 
 # Setup infrastructure
-# No security hardening at this point
 infra:
 	./setup-files/create-resources.sh
 
 # Generate sample data
-gen_fakes:
+gen_samples:
 	rm -rf ./generated-data/
 	python ./scripts/local-operations/local_samples.py
 
@@ -29,7 +29,6 @@ upload_samples:
 # Open a notebook on one of the parquet files in the 'listings' file path
 # Manually use the commands in the synapse_delta.py file in the synapse-operations folder to convert parquet
 # to delta
-# At present, no programmatic access
 
 # Register a datastore to the ADLS Gen 2 in AML 
 create_datastore:

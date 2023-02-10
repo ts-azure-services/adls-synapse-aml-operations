@@ -16,13 +16,14 @@ sub_id=$SUB_ID
 az account set -s $sub_id
 
 # Source unique name for RG, workspace creation
-random_name_generator='/scripts/name-generator/random_name.py'
-unique_name=$(python $PWD$random_name_generator)
+# random_name_generator='/scripts/name-generator/random_name.py'
+# unique_name=$(python $PWD$random_name_generator)
+unique_name='adlsamlwf'
 number=$[ ( $RANDOM % 10000 ) + 1 ]
 resourcegroup=$unique_name$number
 workspacename=$unique_name$number'ws'
 user_id='f1f01265-ed67-4304-97e9-a09ed422718d' # find user id object id
-location='westus'
+location='eastus'
 synapsews=$unique_name'synapsews'
 storageacctname=$unique_name'storageacct'
 container='reviews'
@@ -81,7 +82,7 @@ sleep 5
 
 # Create AML workspace through CLI
 printf "${grn}Starting creation of AML workspace...${end}\n"
-ws_result=$(az ml workspace create -n $workspacename -g $resourcegroup)
+ws_result=$(az ml workspace create -n $workspacename -g $resourcegroup --location $location)
 printf "Result of workspace create:\n $ws_result \n"
 
 # Create Synapse Spark pool
